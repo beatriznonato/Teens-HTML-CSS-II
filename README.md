@@ -252,6 +252,8 @@ O texto de espaço reservado `placeholder` é o que é exibido em seu elemento d
 
 [Formulários](https://www.w3schools.com/tags/tag_form.asp)
 
+[Formulários com HTML e CSS - Vídeo](https://www.youtube.com/watch?v=wwqOJ2o84S4)
+
 - Gifs
 
 [Giphy](https://giphy.com/)
