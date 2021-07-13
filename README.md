@@ -250,9 +250,24 @@ O texto de espaço reservado `placeholder` é o que é exibido em seu elemento d
 
 [Meu primeiro formulário](https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Your_first_form)
 
-[Formulários](https://www.w3schools.com/tags/tag_form.asp)
+[Tags dos Formulários](https://www.w3schools.com/tags/tag_form.asp)
+
+[Tudo sobre Formulários](https://www.homehost.com.br/blog/tutoriais/formulario-html/)
+
+
+- Vídeos
 
 [Formulários com HTML e CSS - Vídeo](https://www.youtube.com/watch?v=wwqOJ2o84S4)
+
+[Background simples mas pode ser que não](https://www.youtube.com/watch?v=kU8oIbe5hLs&list=PLirko8T4cEmx5eBb1-9j6T6Gl4aBtZ_5x&index=10)
+
+[Aprenda Flexbox em 15 minutos - em inglês](https://www.youtube.com/watch?v=fYq5PXgSsbE)
+
+[CSS Grid Layout e Flexbox - Quando Utilizar (avançado)](https://www.youtube.com/watch?v=x-4z_u8LcGc)
+
+[Aprenda CSS Position em 9 minutos - em inglês](https://www.youtube.com/watch?v=jx5jmI0UlXU)
+
+[Entenda o position ABSOLUTE, RELATIVE, FIXED e Z-INDEX](https://www.youtube.com/watch?v=7svFaPgLCnc&t=61s)
 
 - Gifs
 
@@ -263,6 +278,14 @@ O texto de espaço reservado `placeholder` é o que é exibido em seu elemento d
 [Humaaans](https://www.humaaans.com/)
 
 [The Noun Project](https://thenounproject.com/)
+
+- Jogos 
+
+[Aprenda Flexox com o Froggy](https://flexboxfroggy.com/)
+
+[Aprenda mais Flexbox com o Flexbox Defense](http://www.flexboxdefense.com/)
+
+[Aprenda como usar seletores com o CSS Diner](https://flukeout.github.io/)
 
 <h4 align="center">Bons estudos !!!<h4>
 
