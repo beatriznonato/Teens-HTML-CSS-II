@@ -328,6 +328,154 @@ Não é uma regra, mas é uma **boa prática** utilizar o padrão __ apenas 1x d
 
 No começo pode ser um pouco estranho — até você se acostumar com a ideia do padrão; mas, além de proporcionar uma grande organização do projeto e facilidade na escrita/leitura do código, ele também proporciona maior desempenho — você ganha tempo durante o desenvolvimento e consegue fazer muito mais em menores períodos de tempo.
 
+### Pseudo-classes
+
+Uma pseudo-classe CSS é uma palavra-chave adicionada a seletores que especifica um estado especial do elemento selecionado.
+
+Seguindo a seguinte sintaxe:
+```
+seletor:pseudo-classe {
+  propriedade: valor;
+}
+```
+
+O pseudo-classe `:hover` por exemplo, pode ser usado para alterar a cor de um botão quando o usuário passar o cursor sobre ele.
+```html
+button:hover {
+  color: blue;
+}
+```
+
+Pseudo-classes permitem que você aplique um estilo a um elemento não apenas em relação ao conteúdo da árvore do documento, mas também em relação a fatores externos como o histórico de navegação (`:visited`, por exemplo), o status do seu conteúdo (como `:checked` em certos elementos de um formulário), ou a posição do mouse (como `:hover`, que permite saber se o mouse está sobre um elemento ou não).
+
+Assim como nas classes regulares, você pode encadear juntas quantas pseudo-classes você desejar em um seletor. [Índice de pseudo-classes padrão](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes#%C3%ADndice_de_pseudo-classes_padr%C3%A3o)
+
+### Box Model
+
+Em uma página WEB, cada elemento é representado como um box retangular. Determinar o tamanho, propriedades - como sua cor, fundo, estilo das bordas - e a posição desses boxes é o objetivo do mecanismo de renderização.
+
+<div align="center">
+	<img alt="box model" src="https://www.lilengine.co/sites/default/files/inline-images/Screen%20Shot%202019-04-14%20at%2023.59.07.png" width="380">
+</div>
+
+Basicamente, a idéia do box model é composta por quatro partes:
+
+- conteúdo
+
+- espaçamento
+
+- bordas
+
+- margens
+
+Resumindo, podemos dizer que o box model trata-se de como as 4 propriedades acima se relacionam para compor a dimensão do elemento.
+```
+.class {
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    padding: 10px 20px;
+}
+```
+
+Se aplicarmos a classe acima em um elemento, ele vai ter as dimensões que setamos (*50 pixels de altura e largura*), certo? Errado. O elemento vai ser renderizado com *72 pixels de altura* e *92 pixels de largura*. Isso acontece devido ao fato das propriedades *padding* e *border* serem somadas à largura e altura já definidas, aumentando as dimensões do elemento. Isso nos leva a ver que as propriedades *width* e *height* definem as dimensões do seu conteúdo e não do elemento como um todo.
+
+**Largura**
+
+**50** (largura definida) +
+**20** (padding left) +
+**20** (padding right) +
+**1** (border left) +
+**1** (border right) => **92** pixels de largura
+
+**Altura**
+
+**50** (altura definida) +
+**10** (padding top) +
+**10** (padding bottom) +
+**1** (border top) +
+**1** (border bottom) => **72* pixels de altura
+
+Um exemplo prático pra vermos a dor de cabeça que você pode ter no seu dia a dia. Imagine que você precise ter um elemento que ocupe 100% da largura disponível. Mas também precisa que esse elemento tenha *10 pixels de padding* e uma *borda de 1 pixel*.
+```html
+.dor-de-cabeca {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px gray;
+}
+```
+
+Seu elemento com a classe **dor-de-cabeca** ultrapassa o limite de 100% que você tinha definido, provavelmente *quebrando* o layout. A nova largura dele é resultante da soma: 100% (largura definida) + 20 pixels (padding left e right) + 2 pixels (border left e right).
+
+### A propriedade box-sizing
+
+A propriedade box-sizing que permite que mudemos o comportamento do box-model.
+
+Por padrão, todos os elementos possuem o valor content-box para essa propriedade. Trata-se do que vimos nos exemplos acima: o box-model é definido apenas pelo conteúdo.
+```
+box-sizing: content-box;
+```
+
+Um outro exemplo para exemplificar o box-model com o uso do content-box. Considere os elementos, abaixo:
+```html
+.elemento1 {
+    background: #ddd;
+    width: 250px;
+    height: 50px;
+}
+ 
+.elemento2 {
+    background: #ddd;
+    width: 250px; 
+    height: 50px;
+    padding: 0 50px;
+}
+```
+<div align="center">
+	<img alt="box-sizing" src="https://tableless.github.io/iniciantes/assets/img/box-model-content-box.png" width="350">
+</div>
+
+Os elementos são definidos com a mesma largura, mas como podemos ver na imagem acima, o elemento2 é renderizado maior devido ao padding.
+
+> `box-sizing: content-box;` tamanho até o conteúdo.
+
+### A solução border-box
+
+A propriedade **box-sizing** permite um novo valor que resolve todos os problemas apresentados nos exemplos anteriores:
+```
+box-sizing: border-box;
+```
+
+O que ela faz? Simples. Ela altera o comportamento do box-model, fazendo com que o navegador calcule a largura/altura do elemento contando não apenas o seu conteúdo (como visto no **content-box**), mas também considerando o **padding** (espaçamento) e **border** (borda) do elemento.
+
+O exemplo anterior, com a aplicação do **border-box**:
+```html
+.elemento1,
+.elemento2 { box-sizing: border-box; }
+ 
+.elemento1 {
+    background: #ddd;
+    width: 250px;
+    height: 50px;
+}
+ 
+.elemento2 {
+    background: #ddd;
+    width: 250px;
+    height: 50px;
+    padding: 0 50px;
+}
+```
+
+<div align="center">
+	<img alt="border-box" src="https://tableless.github.io/iniciantes/assets/img/box-model-border-box.png" width="350">
+</div>
+
+> `box-sizing: border-box;` tamanho até a borda -> conteúdo + padding + border.
+
+
+
+
 
 #### Links para estudo
 
