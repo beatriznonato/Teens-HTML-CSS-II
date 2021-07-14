@@ -348,7 +348,9 @@ button:hover {
 
 Pseudo-classes permitem que você aplique um estilo a um elemento não apenas em relação ao conteúdo da árvore do documento, mas também em relação a fatores externos como o histórico de navegação (`:visited`, por exemplo), o status do seu conteúdo (como `:checked` em certos elementos de um formulário), ou a posição do mouse (como `:hover`, que permite saber se o mouse está sobre um elemento ou não).
 
-Assim como nas classes regulares, você pode encadear juntas quantas pseudo-classes você desejar em um seletor. [Índice de pseudo-classes padrão](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes#%C3%ADndice_de_pseudo-classes_padr%C3%A3o)
+Assim como nas classes regulares, você pode encadear juntas quantas pseudo-classes você desejar em um seletor. 
+
+[Índice de pseudo-classes padrão](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes#%C3%ADndice_de_pseudo-classes_padr%C3%A3o)
 
 ### Box Model
 
@@ -473,9 +475,69 @@ O exemplo anterior, com a aplicação do **border-box**:
 
 > `box-sizing: border-box;` tamanho até a borda -> conteúdo + padding + border.
 
+### Margin
 
+É a margem do elemento, ou seja, o espaçamento externo do elemento.
 
+- margin-top
 
+Define a margem superior do elemento.
+```html
+div {
+  margin-top: 10px;
+}
+```
+
+- margin-right
+
+Define a margem direita do elemento.
+```html
+div {
+  margin-right: 20px;
+}
+```
+
+- margin-bottom
+
+Define a margem inferior do elemento.
+```html
+div {
+  margin-bottom: 30px;
+}
+```
+
+- margin-left
+
+Define a margem esquerda do elemento.
+```html
+div {
+  margin-left: 40px;
+}
+```
+
+- margin
+
+Define a margem do elemento. Este tipo de declaração pode ser dar de diversas formas.
+```html
+/* t = topo; d = direita; b = baixo; e = esquerda; */
+
+.div1 {
+  /* t = 20px; d = 20px; b = 20px; e = 20px; */
+  margin: 20px;
+}
+.div2 {
+  /* t = 10px; d = 20px; b = 10px; e = 20px; */
+  margin: 10px 20px;
+}
+.div3 {
+  /* t = 10px; d = 20px; b = 30px; e = 20px; */
+  margin: 10px 20px 30px;
+}
+.div4 {
+  /* t = 10px; d = 20px; b = 30px; e = 40px; */
+  margin: 10px 20px 30px 40px;
+}
+```
 
 #### Links para estudo
 
