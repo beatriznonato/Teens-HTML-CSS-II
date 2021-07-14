@@ -539,6 +539,70 @@ Define a margem do elemento. Este tipo de declaração pode ser dar de diversas 
 }
 ```
 
+### Padding
+
+É o preenchimento do elemento, ou seja, o espaçamento interno do elemento.
+
+- padding-top
+
+Define o preenchimento superior do elemento.
+```html
+div {
+  padding-top: 10px;
+}
+```
+
+- padding-right
+
+Define o preenchimento direito do elemento.
+```html
+div {
+  padding-right: 20px;
+}
+```
+
+- padding-bottom
+
+Define o preenchimento inferior do elemento.
+```html
+div {
+  padding-bottom: 30px;
+}
+```
+
+- padding-left
+
+Define o preenchimento esquerdo do elemento.
+```html
+div {
+  padding-left: 40px;
+}
+```
+
+- padding
+
+Define o preenchimento geral do elemento. Assim como na margem, o padding pode declarado de várias formas.
+```html
+/* t = topo; d = direita; b = baixo; e = esquerda; */
+
+.div1 {
+  /* t = 20px; d = 20px; b = 20px; e = 20px; */
+  padding: 20px;
+}
+.div2 {
+  /* t = 10px; d = 20px; b = 10px; e = 20px; */
+  padding: 10px 20px;
+}
+.div3 {
+  /* t = 10px; d = 20px; b = 30px; e = 20px; */
+  padding: 10px 20px 30px;
+}
+.div4 {
+  /* t = 10px; d = 20px; b = 30px; e = 40px; */
+  padding: 10px 20px 30px 40px;
+}
+```
+
 #### Links para estudo
 
 - Mais sobre formulários
