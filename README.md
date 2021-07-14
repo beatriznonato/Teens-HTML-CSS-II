@@ -244,6 +244,91 @@ O texto de espaço reservado `placeholder` é o que é exibido em seu elemento d
 ```
 <hr>
 
+<div align="center">
+	<img alt="caixa divida em 3 cores (azul,laranja e amarelo) e cada cor com uma letra formando a palavra BEM" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTILWyuEEqYlNpXIKGHQgaE5xaC2yKFEIHDcA&usqp=CAU" width="400">
+</div>
+
+**BEM** é uma metodologia, uma convenção, um padrão de nomenclatura que utilizamos para manter o nosso projeto simples e organizado. O principal objetivo dessa metodologia, além de manter os códigos simples na hora da escrita e (principalmente) da manutenção, é fazer com que qualquer desenvolvedor possa ter total autonomia para mexer em qualquer tipo de projeto — seja um projeto que você já conheça ou um projeto no qual você acabou de entrar.
+
+Essa metodologia é aplicada na nomenclatura das classes CSS dos nossos elementos HTML. A sigla **BEM** significa *Block Element Modifier*, em português, *Bloco Elemento Modificador* — esses 3 pilares são as bases dessa metodologia e também são as categorias nas quais vamos dividir nossos elementos.
+```html
+<ul class="list">
+  <li class="list__item">
+    <h2 class="list__title">Minha lista</h2>
+    <p class="list__author>Beatriz Nonato</p>
+    <p class="list__text">Uma lista usando BEM :)</p>
+  </li>
+</ul>
+```
+
+`.list` é um **bloco**;
+
+`.list__item`, `.list__title`, `.list__author` e `.list__text`são **elementos**;
+
+Para contemplar os **modificadores** no exemplo, imagine que alguns itens terão um certo destaque em relação as outras. Dessa forma, nossa estrutura ficaria assim:
+```html
+<ul class="list">
+  <li class="list__item list__item--highlight">
+    <h2 class="list__title">Minha lista</h2>
+    <p class="list__author>Beatriz Nonato</p>
+    
+    <p class="list__text">Uma lista usando BEM :)</p>
+  </li>
+</ul>
+```
+Ou seja, explicando agora o padrão da nomenclatura que utilizamos:
+
+- Nossa primeira classe sempre será o **bloco**: `.list`
+
+- Para criarmos os elementos, utilizamos 2 underlines ( __ ) após o nome do nosso bloco: `.list__item`, `.list__title`
+
+- Para criarmos os modificadores, utilizamos 2 traços ( — ) no nosso bloco ou elemento: `.list__item--highlight`, `.list__author--active`
+
+Exemplo ilustrativo:
+
+<div align="center">
+	<img alt="card com estrutura BEM" src="https://miro.medium.com/max/1400/1*5VGR1kwb_1KJOhhhCPeL-A.png" width="350">
+</div>
+
+### Como saber o que é um elemento e o que é um modificador?
+
+<div align="center">
+	<img alt="homem usado para exemplificar o BEM" src="https://www.e-accent.com/images/blog/bem.png" width="350">
+</div>
+
+Um elemento sempre será uma parte, um complemento da estrutura do bloco. Seguindo nossos exemplos acima, um item de uma lista, o título de uma lista.
+
+Os **modificadores** são estados que os nossos blocos ou elementos poderão ter: um botão com diferentes aparências, uma situação de destaque.
+
+*É importante lembrar também que um elemento não pode estar dentro de outro*. Por exemplo:
+```html
+<ul class="list">
+  <li class="list__item">
+    <h2 class="list__item__title">Minha lista</h2>
+  </li>
+</ul>
+```
+
+Quando nos deparamos com essa situação, devemos utilizar a seguinte estrutura:
+```html
+<ul class="list">
+  <li class="list__item">
+    <h2 class="list__title">Minha lista</h2>
+  </li>
+</ul>
+```
+
+E eis aqui o porque disso:
+
+> Um bloco é uma entidade independente, um componente de uma aplicação. Um bloco pode ser simples ou composto — contendo outros blocos.
+
+É uma questão de contexto: `.list` é o nosso *bloco composto* (compound block), que possui outro bloco composto, .list__item. E `.list__title` é apenas um bloco, contido dentro de `.list__item`.
+
+Não é uma regra, mas é uma **boa prática** utilizar o padrão __ apenas 1x dentro do nome da sua classe (apenas 1 elemento). Se você está chegando em nomenclaturas com mais de um elemento, é bom rever a estrutura utilizada!
+
+No começo pode ser um pouco estranho — até você se acostumar com a ideia do padrão; mas, além de proporcionar uma grande organização do projeto e facilidade na escrita/leitura do código, ele também proporciona maior desempenho — você ganha tempo durante o desenvolvimento e consegue fazer muito mais em menores períodos de tempo.
+
+
 #### Links para estudo
 
 - Mais sobre formulários
@@ -254,10 +339,12 @@ O texto de espaço reservado `placeholder` é o que é exibido em seu elemento d
 
 [Tudo sobre Formulários](https://www.homehost.com.br/blog/tutoriais/formulario-html/)
 
+[5 razões para usar o BEM - inglês](https://www.elpassion.com/blog/5-reasons-to-use-bem-a)
+
 
 - Vídeos
 
-[Formulários com HTML e CSS - Vídeo](https://www.youtube.com/watch?v=wwqOJ2o84S4)
+[Formulários com HTML e CSS](https://www.youtube.com/watch?v=wwqOJ2o84S4)
 
 [Background simples mas pode ser que não](https://www.youtube.com/watch?v=kU8oIbe5hLs&list=PLirko8T4cEmx5eBb1-9j6T6Gl4aBtZ_5x&index=10)
 
