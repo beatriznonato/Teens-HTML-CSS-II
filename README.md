@@ -603,6 +603,90 @@ Define o preenchimento geral do elemento. Assim como na margem, o padding pode d
 }
 ```
 
+### Medida absoluta x Medida relativa
+
+- Medidas Absolutas
+
+Essas são as mais comuns que vemos no dia a dia. São medidas que não estão referenciadas a qualquer outra unidade, ou seja, não dependem de um valor de referência. São unidades de medidas definidas pela física, como o **píxel**, centímetro, metro, etc...
+
+Essas medidas são fixas e não mudam de acordo com as especificações do dispositivo. Esse tipo de medida é indicada para quando conhecemos perfeitamente as características físicas e as configurações das mídias onde serão exibidos nossos projetos.
+
+- Medidas Relativas
+
+Essas são as que normalmente não estamos habituados. Essas medidas são calculadas tendo como base uma outra unidade de medida definida, como por exemplo **em** e **rem**.
+Devido ao fato de que essas medidas são *calculadas pelo browser* baseando-se em outra unidade, elas tendem a ser bastante flexíveis. Ou seja, podemos ter resultados diferentes de acordo com o ambiente.
+
+### Medidas usadas no css
+
+- Píxel
+
+Píxel nada mais é do que os pequenos pontinhos luminosos da tela do seu monitor, celular, televisão, etc... Logo, o píxel é o menor elemento em um dispositivo de exibição!
+
+Essa é uma medida bastante famosa para os web designers, grande parte dos desenvolvedores web usam o píxel como unidade principal de seus projetos.
+```html
+h1 {
+  font-size: 60px;
+}
+```
+
+- em
+
+Dificilmente você achará algum navegador que não tenha suporte para essa medida, que está presente desde os primórdios. Até para o IE, nós teríamos que usar a versão abaixo da 3.0 para que tivéssemos algum problema.
+
+Esse definitivamente é um dos pontos que fazem o em tão popular. O segundo ponto, com certeza se dá a *facilidade de criar layouts fluídos e responsivos*.
+```html
+<style>
+    #div{
+        font-size: 16px;
+    }
+
+    #filho{
+        font-size: 2em;
+    }
+</style>
+
+<div id="pai">
+    div pai
+    <div id="filho">
+        div filho
+    </div>
+</div>
+```
+
+Acima, temos uma div pai onde estou definindo um font-size de 16px, dentro dessa div, temos uma única div filha. Como havia mencionado, o tamanho definido para a fonte impactará no **em** dos elementos filhos.
+
+Nesse nosso caso, para a div mais interna (id=filho), **1em será igual a 16px**, seguindo a lógica, **2em será igual a 32px** e assim por diante. Podemos colocar valores como 1.5 também! Nesse nosso caso, **1.5em será igual a 24px** Quando expressamos tamanhos como margin, padding utilizando **em**, isso significa que eles serão relativos ao tamanho da fonte do elemento pai, ou seja, 2em significa 2x o tamanho da fonte atual.
+
+O último ponto que devemos nos atentar ao usar o **em** é que quando usamos essa medida, nós temos que considerar o font-size de todos os elementos pai. Por exemplo, se tivéssemos uma terceira div mais interna no nosso exemplo anterior e definirmos o tamanho da fonte para 2em, nesse caso esses **2em seriam 64px**, uma vez que o font-size do elemento pai foi definido sendo **32px**(2em)!
+
+- rem
+
+O **rem** vem como sucessor do **em** e ambos compartilham a mesma lógica de funcionamento (font-size), porém a forma de implementação é diferente. Enquanto o **em** está diretamente relacionado ao tamanho da fonte do elemento pai, o **rem** está relacionado com o tamanho da fonte do elemento root (raiz), no caso, a tag.
+
+O fato de que o **rem** se relaciona com o **elemento** raiz resolve aquele problema que tínhamos com diversas divs (elementos) aninhados, uma vez que não haverá essa "herança" de tamanhos, lembra?! Ou seja, não precisaremos ter dor de cabeça tendo que realizar cálculos, uma vez que nos baseamos na tag raiz.
+
+Exemplificando, sabemos que a tag html é a tag raiz de todo documento html. Dito isso, se definirmos que o font-size desse elemento será de 18px, então **1rem = 18px, 2rem = 36px** e assim por diante...
+
+- Porcentagem (%)
+
+Apesar de não ser uma unidade de medida, a porcentagem costuma ser bastante utilizada quando falamos de layout responsivo e fluido.
+
+A porcentagem permite que criemos módulos que sempre vão se readaptar para ocupar a quantidade especificada. Por exemplo, se definirmos um elemento tendo um tamanho de **50%**, independente do dispositivo em questão, esse módulo sempre ocupará metade do espaço que lhe cabe (caso esteja dentro de algum outro elemento).
+
+- Vw (viewport width)
+
+Viewport nada mais é que a área visível de uma página web para o seu usuário, essa viewport pode variar de acordo com o dispositivo, sendo menor em celulares e maior em desktops.
+
+Antigamente, quando não existiam tablets e celulares capazes de acessar sites, todas as web pages eram pensadas para a tela de um computador, com tamanho fixo e design estático. Com a chegada desses dispositivos móveis, essas páginas eram grandes demais para serem exibidas nesses aparelhos, o que tornava muito difícil a navegação.
+
+A primeira solução partiu dos browsers desses dispositivos, eles adotavam um comportamento de retirar o zoom de forma que o site inteiro coubesse na tela do aparelho,definitivamente não era o ideal, mas uma solução rápida. No HTML5, foi introduzido uma maneira para que os desenvolvedores conseguissem alterar a viewport através da tag, corrigindo esse problema de usabilidade relacionado aos dispositivos móveis, mas isso é assunto para outra postagem!
+
+Voltando para o nosso querido vw, essa unidade se relaciona diretamente com a largura da viewport, onde 1vw representa 1% do tamanho da largura dessa área visível. A diferença entre vw e a % é bem semelhante a diferença entre em e rem, onde a % é relativa ao contexto local do elemento e o vw é relativo ao tamanho total da largura da viewport do usuário.
+
+- Vh (viewport height)
+
+Essa unidade funciona da mesma forma que o vw, porém dessa vez, a referência será a altura e não a largura.
+
 #### Links para estudo
 
 - Mais sobre formulários
@@ -614,6 +698,12 @@ Define o preenchimento geral do elemento. Assim como na margem, o padding pode d
 [Tudo sobre Formulários](https://www.homehost.com.br/blog/tutoriais/formulario-html/)
 
 [5 razões para usar o BEM - inglês](https://www.elpassion.com/blog/5-reasons-to-use-bem-a)
+
+[Guia Completo FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+[Curso em vídeo de Fluência em HTML e CSS](https://www.udemy.com/course/curso-de-htm5-css3-flexbox-e-cssgrid/?referralCode=D6A2FD85C810B733234B)
+
+[Viewport](https://css-tricks.com/fun-viewport-units/)
 
 
 - Vídeos
